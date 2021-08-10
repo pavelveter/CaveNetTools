@@ -48,6 +48,6 @@ for s in $(echo ${response} | jq -r ".country, .ip, .city, .region, .org, .timez
     r+=$s"#"
 done
 
-echo $r | sed "s/#/;/g; s/;null;/;Unknown;/g" | pygmentize -O style=paraiso-dark -l awk
+echo $r | sed "s/#/;/g; s/;null;/;Unknown;/g" # | pygmentize -O style=paraiso-dark -l awk
 
 IFS=" "
