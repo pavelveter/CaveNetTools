@@ -8,7 +8,7 @@ readonly mikrotik=192.168.88.1
 readonly port=2200
 readonly user=admin
 
-readonly vendict=~/veter_scripts/cavenettools/oui.txt
+readonly vendict=$(dirname $0)/oui.txt
 
 readonly unknown="e[35m__UNKNOWN__e[39m"
 readonly cnc="e[32mCONNECTe[39m  "

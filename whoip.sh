@@ -4,8 +4,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly CountryCodes=~/veter_scripts/cavenettools/country_codes.txt
-readonly CountryFlags=~/veter_scripts/cavenettools/country_flags.txt
+readonly CountryCodes=$(dirname $0)/country_codes.txt
+readonly CountryFlags=$(dirname $0)/country_flags.txt
 readonly GoogleMaps="google.com/maps/place/"
 readonly url="https://ipinfo.io"
 
