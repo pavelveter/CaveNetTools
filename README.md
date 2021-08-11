@@ -1,5 +1,5 @@
-BUNCH OF HOME NET TOOLS
+# BUNCH OF HOME NET TOOLS
 
-**mikrotik_who.sh* — shows, who use dhcp of Mikrotik Router
+__mikrotik_who.sh__ — shows, who use dhcp of Mikrotik Router
 
-*whoip.sh*** — shows additional info about IP-address, require curl & jq
+__whoip.sh__ — shows additional info about IP-address, require curl & jq
