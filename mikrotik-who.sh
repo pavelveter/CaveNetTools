@@ -10,11 +10,16 @@ readonly user=admin
 
 readonly vendict=$(dirname $0)/oui.txt
 
-readonly unknown="e[35m__UNKNOWN__e[39m"
-readonly cnc="e[32mCONNECTe[39m  "
-readonly wot="e[31mWAITINGe[39m  "
+readonly c_violet="e[35m"
+readonly c_green="e[32m"
+readonly c_red="e[31m"
+readonly c_reset="e[0m"
 
-[[ -s ${vendict} ]] || (echo -e "\e[31mWait a minute, downloading database of vendors...\n\e[39m"; \
+readonly unknown="${c_violet}__UNKNOWN__${c_reset}"
+readonly cnc="${c_green}CONNECT${c_reset}  "
+readonly wot="${c_red}WAITING${c_reset}  "
+
+[[ -s ${vendict} ]] || (echo -e "Wait a minute, downloading database of vendors...\n"; \
                         wget http://standards.ieee.org/develop/regauth/oui/oui.txt)
 
 while read line; do
