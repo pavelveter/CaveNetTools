@@ -4,12 +4,17 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+which jq > /dev/null || ( echo "ERROR! Need to install jq, https://stedolan.github.io/jq/download/"; exit 1)
+which curl > /dev/null || ( echo "ERROR! Need to install curl, https://curl.se/download.html"; exit 1 )
+
 CountryCodes="$(dirname "$0")/country_codes.txt"
 readonly CountryCodes
 CountryFlags="$(dirname "$0")/country_flags.txt"
 readonly CountryFlags
 readonly GoogleMaps="google.com/maps/place/"
-readonly url="https://ipinfo.io"
+readonly url="ipinfo.io"
+
+ping -c 1 ${url} > /dev/null 2>&1 || ( echo "ERROR! Can't access URL: ${url}"; exit 1)
 
 # Divider for for
 IFS=";"
